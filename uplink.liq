@@ -1,9 +1,5 @@
 #########################################
 # streamer & escopost 1.0  	#
-# no@copyright				#
-# radioblackout.org	105.250 Torino	#
-# blackoutinfo@autistici.org		#
-# One Station Against the Nation	#
 #########################################
 
 #set("root.sync",false)
@@ -23,29 +19,29 @@ stream = (input.alsa(id='linein'):source(2,0,0))
 #stream = mksafe(input.pulseaudio(id='linein'))
 
 
-stream = rewrite_metadata([("title","Radio Blackout")],stream)
+stream = rewrite_metadata([("title","Radio")],stream)
 
 
 output.icecast(%vorbis(quality=0.8, samplerate=44100, channels=2), 
-	host="uplink.radioblackout.org",
+	host="uplink.localhost.dev",
 	port=8005,
 	mount='uplink.ogg',
 	genre='Uplink',
 #	restart="true",
 	url="localhost",
-	description="Radio Blackout main uplink",
+	description="main uplink",
 	timeout=1200.,
 	stream
 )
 
 #output.icecast(quality=0.7,
-#        host="92.243.26.79",
+#        host="uplink",
 #        port=8005,
 #        mount='uplink.ogg',
 #        genre='Uplink',
 #        restart=true,
 #        url="localhost",
-#        description="Radio Blackout main uplink",
+#        description="main uplink",
 #        timeout=1200.,
 #        stream
 #)
@@ -54,14 +50,14 @@ output.icecast(%vorbis(quality=0.8, samplerate=44100, channels=2),
 
 
 #output.icecast(%vorbis(quality=0.7, mono),
-#        host="stream2.radioblackout.org",
+#        host="uplink",
 #        port=8005,
 #        mount='uplink.ogg',
 #        genre='Uplink',
 #        restart=true,
 #	restart_delay=30,
 #        url="localhost",
-#        description="Radio Blackout main uplink",
+#        description="main uplink",
 #        timeout=600.,
 #        stream
 #)
@@ -92,7 +88,7 @@ output.icecast(%vorbis(quality=0.8, samplerate=44100, channels=2),
 #end
 
 
-#output.file(%vorbis(quality=0.5, channels=2),"/mnt/storage/escopost/%Y/%m/%d/%Y.%m.%d-%H.%M.%S-escopost.ogg", 
+#output.file(%vorbis(quality=0.5, channels=2),"/mnt/storage/archive/%Y/%m/%d/%Y.%m.%d-%H.%M.%S-archive.ogg", 
 #	id="escopost", 
 #	reopen_delay = 3600.0, reopen_when = (fakeclock),
 #	stream
