@@ -6,7 +6,7 @@ def fakeclock ()
     true
 end
 
-escopost = mksafe(input.http("<streaming_source>"))
+archive = mksafe(input.http("<streaming_source>"))
 
 output.file (%mp3(mono, stereo=false, samplerate=44100, bitrate=80), 
     "/srv/archive/%Y/%m/%d/%Y.%m.%d-%H.%M.%S-archive.mp3", 
