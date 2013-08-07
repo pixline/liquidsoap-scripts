@@ -65,22 +65,6 @@ output.icecast(%vorbis(quality=0.8, samplerate=44100, channels=2),
 
 
 
-#output.harbor(format="audio/ogg",
-
-
-
-#output.icecast(%mp3(quality=0.5, mono)
-#host="95.142.167.22",
-#        port=8001,
-#        mount='blackout.mp3',
-#        password='porcoddio',
-#        genre='Uplink',
-#        restart=true,
-#        url="http://radioblackout.org",
-#        description="Radio Blackout",
-#        stream
-#)
-
 
 
 #def fakeclock ()
